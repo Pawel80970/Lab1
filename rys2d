@@ -1,0 +1,112 @@
+package rys2d;
+
+/**
+ *
+*@author Pawel
+*/ 
+import java.awt.Color; 
+import java.awt.EventQueue; 
+import java.awt.Graphics; 
+import java.awt.Graphics2D; 
+import java.awt.geom.Point2D; 
+import javax.swing.JFrame; 
+import javax.swing.JPanel;
+class Surface extends JPanel {
+
+private void doDrawing(Graphics g) {
+
+    Graphics2D g2d = (Graphics2D) g;
+  
+     g2d.setColor(Color.green);
+     g2d.fillRect(500, 500, 500, 500);
+     
+     g2d.setColor(Color.blue);
+     g2d.fillRect(525, 625, 200, 350);
+     
+     g2d.setColor(Color.blue);
+     g2d.fillRect(790, 560, 150, 150);
+     
+     g2d.setColor(Color.white);
+     g2d.fillRect(860, 560, 10, 150);
+     
+     g2d.setColor(Color.white);
+     g2d.fillRect(785, 700, 160, 18);
+     
+     g2d.setColor(Color.white);
+     g2d.fillRect(790, 625, 150, 11);
+     
+     g2d.setColor(Color.black);
+     g2d.fillRect(390,950,700,50); 
+     
+     g2d.setColor(Color.yellow);
+     g2d.fillOval(1150,150,200,200);
+     
+     g2d.setColor(Color.cyan);
+     g2d.fillRect(390,450,700,70);
+     
+     g2d.setColor(Color.cyan);
+     g2d.fillRect(420,400,650,70);
+     
+     g2d.setColor(Color.black);
+     g2d.fillRect(900,331,50,70);
+     
+     g2d.setColor(Color.black);
+     g2d.fillRect(1180, 935, 40, 30);
+     
+     g2d.setColor(Color.black);
+     g2d.fillRect(1380, 935, 40, 30);
+     
+     g2d.setPaint(Color.green);
+     g2d.fillOval(1160, 870, 85, 70); 
+     
+     g2d.setPaint(Color.green);
+     g2d.fillOval(1360, 870, 85, 70); 
+     
+     g2d.setColor(Color.LIGHT_GRAY);
+     g2d.fillOval(195,700,100,100);
+     
+     g2d.setColor(Color.yellow);
+     g2d.fillRect(200,800,90,150);
+     
+     g2d.setColor(Color.black);
+     g2d.drawLine(200,1000,230,950);
+     g2d.drawLine(250,950,280,1000);
+     
+     g2d.setColor(Color.black);
+     g2d.drawLine(200,830,150,900); 
+     g2d.drawLine(330,900,290,830); 
+}
+
+@Override
+public void paintComponent(Graphics g) {
+
+    super.paintComponent(g);
+    doDrawing(g);
+}
+}
+
+public class LinesEx extends JFrame {
+
+public LinesEx() {
+
+    initUI();
+}
+
+private void initUI() {
+
+    add(new Surface());
+
+    setTitle("Rysunek domu"); 
+    setSize(1500, 1500); 
+    setLocationRelativeTo(null);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+
+public static void main(String[] args) {
+
+    EventQueue.invokeLater(() -> {
+        LinesEx ex = new LinesEx();
+        ex.setVisible(true);
+    });
+}
+}
